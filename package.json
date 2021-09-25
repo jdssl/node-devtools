@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/JonatanLima/node-devtools.git"
   },
-  "keywords": ["nodejs", "typescript", "jest"],
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "jest"
+  ],
   "author": "JonatanLima <jotanlima@gmail.com>",
   "license": "MIT",
   "bugs": {
@@ -21,10 +25,14 @@
     "node": "16.x"
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.10.1",
     "jest": "^27.2.2",
     "ts-jest": "^27.0.5",
     "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
