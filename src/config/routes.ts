@@ -1,11 +1,16 @@
 import { Express, Router } from 'express'
-import fg from 'fast-glob'
+import { readdirSync } from 'fs'
+import { join } from 'path'
 
 export default (app: Express): void => {
   const router = Router()
   const prefix = '/api'
   app.use(prefix, router)
-  fg
-    .sync('**/src/routes/**routes.ts')
-    .map(async file => (await import(`../../${file}`)).default(router))
+  const routesPath = join(__dirname, '/../routes')
+
+  readdirSync(routesPath).map(async file => {
+    if (!file.endsWith('.map')) {
+      (await import(`../routes/${file}`)).default(router)
+    }
+  })
 }

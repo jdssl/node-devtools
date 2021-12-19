@@ -2,12 +2,14 @@
   "name": "devtools",
   "version": "1.0.0",
   "description": "Debug Node.js, TypeScript, Jest with Google Chrome DevTools",
-  "main": "dist/server.js",
+  "main": "./dist/server.js",
   "scripts": {
-    "start": "node dist/server.js",
+    "start": "npm run build && node ./dist/server.js",
+    "build": "rimraf dist && tsc -p tsconfig.json",
     "start:dev": "nodemon",
-    "start:debug": "nodemon --exec 'node --inspect=0.0.0.0:9229 --require ts-node/register src/server.ts'",
-    "test": "jest --passWithNoTests --runInBand --no-cache",
+    "start:debug": "nodemon --exec 'node --inspect-brk=9229 --require ts-node/register src/server.ts'",
+    "test": "jest --passWithNoTests --runInBand --no-cache --logHeapUsage",
+    "test:debug": "node --inspect-brk=9229 ./node_modules/.bin/jest --passWithNoTests --runInBand --no-cache --logHeapUsage",
     "test:clear": "jest --clearCache"
   },
   "repository": {
@@ -41,6 +43,7 @@
     "typescript": "^4.4.3"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "rimraf": "^3.0.2"
   }
 }
