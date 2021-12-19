@@ -5,6 +5,6 @@ export default (router: Router): void => {
     debugger
     res
       .status(200)
-      .json({ message: 'Welcome to Balu bal' })
+      .json({ message: 'Welcome to Balu' })
   })
 }
