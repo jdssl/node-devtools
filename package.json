@@ -28,8 +28,8 @@
   },
   "homepage": "https://github.com/JonatanLima/node-devtools#readme",
   "engines": {
-    "npm": "8",
-    "node": "16"
+    "npm": "9",
+    "node": "18"
   },
   "devDependencies": {
     "@types/express": "^4.17.15",
