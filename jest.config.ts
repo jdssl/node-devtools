@@ -1,7 +1,10 @@
-const { resolve } = require('path')
+import type { Config } from 'jest'
+
+import { resolve } from 'path'
+
 const root = resolve(__dirname)
 
-module.exports = {
+const config: Config = {
   rootDir: root,
   collectCoverageFrom: [
     '<rootDir>/src/**/*.ts',
@@ -16,7 +19,7 @@ module.exports = {
   },
   coverageThreshold: {
     global: {
-      branch: 100,
+      branches: 100,
       functions: 100,
       lines: 100,
       statements: 100
@@ -24,3 +27,5 @@ module.exports = {
   },
 	watchPathIgnorePatterns: ['globalConfig']
 }
+
+export default config
