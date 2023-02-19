@@ -6,6 +6,7 @@ const root = resolve(__dirname);
 
 const config: Config = {
     rootDir: root,
+    clearMocks: true,
     collectCoverageFrom: ["<rootDir>/src/**/*.ts", "!<rootDir>/**/tests/**"],
     coverageDirectory: "coverage",
     coverageProvider: "babel",
