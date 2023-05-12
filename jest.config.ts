@@ -23,6 +23,10 @@ const config: Config = {
             statements: 100,
         },
     },
+    moduleNameMapper: {
+      '@/tests/(.*)': '<rootDir>/tests/$1',
+      '@/(.*)': '<rootDir>/src/$1'
+    },
     watchPathIgnorePatterns: ["globalConfig"],
 };
 
